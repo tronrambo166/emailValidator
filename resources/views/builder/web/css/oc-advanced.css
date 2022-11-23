@@ -1,0 +1,278 @@
+/*!
+ * Alan Da Silva - Viwari (https://codecanyon.net/user/viwari/portfolio)
+ * Copyright 2017 Berevi Collection
+ * Licensed (https://codecanyon.net/licenses/standard)
+ * See full license https://codecanyon.net/licenses/terms/regular
+ */
+
+.jumbotron {
+    padding: 3rem 1rem;
+}
+
+.row.row-offcanvas.row-offcanvas-left {
+    padding-left: 0;
+}
+
+.masthead-page {
+    background-size: auto auto;
+    height: auto;
+    background-color: rgb(93, 146, 154);
+    width: 100%;
+    margin-left: 0;
+    min-width: 350px;
+}
+
+.row-offcanvas-left {
+    left: 0;
+}
+
+.row-offcanvas {
+    position: relative;
+}
+
+.row-offcanvas-left .sidebar-offcanvas {
+    left: -100%;
+    display: none !important;
+}
+
+.sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+.d-md-none {
+    display: none !important;
+}
+
+.brv-app-button {
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -8px;
+}
+
+.sidebar-nav > .sidebar-brand span {
+    color: #fff;
+    background: none;
+    cursor: default;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: auto;
+    line-height: 70px;
+}
+
+.sidebar-nav li a.active {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li {
+    line-height: 50px;
+}
+
+#sidebar-wrapper {
+    background-color: #333;
+    background: linear-gradient(45deg, #282828 12%, transparent 0, transparent 88%, #282828 0),
+    linear-gradient(135deg, transparent 37%, #191919 0, #191919 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #282828 0, #282828 63%, transparent 0) #232323;
+    background: -webkit-linear-gradient(45deg, #282828 12%, transparent 0, transparent 88%, #282828 0),
+    -webkit-linear-gradient(135deg, transparent 37%, #191919 0, #191919 63%, transparent 0),
+    -webkit-linear-gradient(45deg, transparent 37%, #282828 0, #282828 63%, transparent 0) #232323;
+    background-size: 5px 5px;
+    top: 59px;
+}
+
+#sidebar-wrapper ul > li .active {
+    background: none #000;
+    border-color: #848484;
+    border-radius: 0 0 0 0 !important;
+    border-right: 1px solid #848484;
+    border: 1px solid #848484;
+    margin-right: 2px;
+}
+
+#sidebar-wrapper ul > li .active:hover {
+    background: none #000;
+}
+
+#sidebar-wrapper ul > li a:hover {
+    background: #474747;
+}
+
+#sidebar-wrapper ul > li a {
+    color: #fff;
+}
+
+.hide {
+    display: none;
+}
+
+.krajee-default.file-preview-frame {
+    background: linear-gradient(45deg, #363636 0%, transparent 0, transparent 100%, #363636 0),
+    linear-gradient(135deg, transparent 47%, #363636 0, #363636 53%, transparent 0),
+    linear-gradient(45deg, transparent 47%, #363636 0, #363636 53%, transparent 0) #3f3f3f;
+    background: -webkit-linear-gradient(45deg, #363636 0%, transparent 0, transparent 100%, #363636 0),
+    -webkit-linear-gradient(135deg, transparent 47%, #363636 0, #363636 53%, transparent 0),
+    -webkit-linear-gradient(45deg, transparent 47%, #363636 0, #363636 53%, transparent 0) #3f3f3f;
+    background-size: 8px 8px;
+    color: #f2f2f2;
+}
+
+.close.kv-error-close {
+    color: #a94442;
+}
+
+.krajee-default .file-preview-other {
+    padding: 0;
+}
+
+.file-thumbnail-footer .file-caption-name {
+    height: auto;
+    padding-top: 20px;
+}
+
+.select2-container--bootstrap .select2-selection--single {
+    height: 37px;
+    padding: 6px 24px 6px 12px;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.select2-container--bootstrap .select2-selection--multiple {
+    height: 37px;
+    font-size: 1rem;
+    line-height: 1.35;
+    
+    padding-right: 5px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__placeholder, 
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder {
+    color: #7a7a7a;
+}
+
+.select2-container--bootstrap .select2-selection {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.select2-container--bootstrap .select2-selection--multiple {
+    height: auto;
+}
+
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
+    padding: 3px;
+    height: auto;
+}
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+    padding: 0 6px;
+    margin: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #ddd;
+}
+
+.select2-container--bootstrap .select2-results__option[aria-selected=true] {
+    background-color: #c4c4c4;
+    color: #262626;
+}
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__rendered, 
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered {
+    color: #495057;
+}
+
+.select2-search__field {
+    width: 100%;
+}
+
+.select2-container--bootstrap .select2-results__group {
+    font-size: 16px;
+}
+
+.form-check {
+    margin-bottom: 0;
+}
+
+.form-control:disabled, 
+.form-control[readonly] {
+    background-color: #fff;
+}
+
+.select2-container--bootstrap.select2-container--disabled .select2-selection {
+    background-color: #fff;
+}
+
+.modal.modal-timer.show {
+    opacity: 1 !important;
+    background-color: rgb(93, 146, 154);
+}
+
+h3.brv-title {
+    color: #fff;
+    text-shadow: 1.5px 1.5px #474747;
+}
+
+p.brv-sub-title {
+    color: #fff;
+    text-shadow: 1.2px 1.2px #474747;
+}
+
+.brv-global {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px 0 1px 0;
+    border-radius: 5px;
+}
+
+.select2-container .select2-search--inline {
+    width: 100%;
+}
+
+.brv-btn-orange {
+    color: #fff;
+    background-color: #fd7e14;
+    border-color: #e37112;
+}
+
+.brv-btn-orange:active {
+    background-color: #e59400;
+    background-image: none;
+    border-color: #fd8a2b;
+}
+
+.brv-btn-orange:hover {
+    color: #fff;
+    background-color: #e37112;
+    border-color: #fd8a2b;
+}
+
+.brv-btn-orange:focus {
+    box-shadow: 0 0 0 3px rgba(255,165,0,.5);
+}
+
+.popover.tour.project-tour {
+    max-width: 552px !important;
+}
+
+h4.brv-popover-title {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+p.brv-popover-content {
+    margin-bottom: -5px;
+}

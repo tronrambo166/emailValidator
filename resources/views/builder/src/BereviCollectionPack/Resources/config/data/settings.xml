@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="settings" version="1.0">
+  <datatable name="global">
+    <row id="1">
+      <smtp_sender>sohaankane@gmail.com</smtp_sender>
+      <domain_name/>
+      <bounce_mail_handler_email>sohaankane@gmail.com</bounce_mail_handler_email>
+      <bounce_mail_handler_password>11111111</bounce_mail_handler_password>
+      <server_type>gmail</server_type>
+      <bounce_times>2</bounce_times>
+    </row>
+  </datatable>
+</database>

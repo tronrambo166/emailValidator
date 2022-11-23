@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="optimail" version="1.0">
+  <datatable name="mail_cleaner">
+    <row id="1">
+      <file_name>Test</file_name>
+      <clean_level>1</clean_level>
+      <asc_or_desc>none</asc_or_desc>
+      <tld_and_sld>none</tld_and_sld>
+      <aeo_tld>none</aeo_tld>
+      <aeo_sld>none</aeo_sld>
+    </row>
+    <row id="2">
+      <file_name>Test</file_name>
+      <clean_level>1</clean_level>
+      <asc_or_desc>none</asc_or_desc>
+      <tld_and_sld>none</tld_and_sld>
+      <aeo_tld>none</aeo_tld>
+      <aeo_sld>none</aeo_sld>
+    </row>
+  </datatable>
+</database>

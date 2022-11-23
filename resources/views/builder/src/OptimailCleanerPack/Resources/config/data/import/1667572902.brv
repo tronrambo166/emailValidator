@@ -1,0 +1,9 @@
+{
+"data": [
+{
+"id": "1667572902",
+"name": "Test","clean_level": "1","asc_or_desc": "none","tld_and_sld": "none","aeo_tld": "none","aeo_sld": "none","nb_emails": "5","download": "<button id='1667572902-G' onclick='downloadGood(this)' class='btn btn-success btn-sm' role='button'>Good</button> <button id='1667572902-B' onclick='downloadBad(this)' class='btn btn-danger btn-sm' role='button'>Bad</button>","delete": "<button id='1667572902-D' onclick='deleteMe(this)' class='btn btn-secondary btn-sm' type='button' role='button'>Delete</button>",
+"info": "<div class='alert alert-success' role='alert'>Status: OK, Email: sohaanamp3kane@gmail.com</div><div class='alert alert-success' role='alert'>Status: OK, Email: soamphaan4kane@gmail.com</div><div class='alert alert-success' role='alert'>Status: OK, Email: sohaan5kaampne@gmail.com</div><div class='alert alert-success' role='alert'>Status: OK, Email: sohaan6kampane@gmail.com</div><div class='alert alert-success' role='alert'>Status: OK, Email: sohaan7kane@gmail.com</div>","results": "<h5><span class='badge badge-success'>Good emails: 5</span> <span class='badge badge-danger'>Invalid emails: 0</span></h5>","extra": "2022-11-04 15:41:42"
+}
+]
+}

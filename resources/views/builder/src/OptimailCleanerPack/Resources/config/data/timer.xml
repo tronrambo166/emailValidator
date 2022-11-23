@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="timer" version="1.0">
+  <datatable name="mail_cleaner">
+    <row id="1">
+      <percent>0</percent>
+      <active>0</active>
+      <reload>1</reload>
+    </row>
+  </datatable>
+</database>

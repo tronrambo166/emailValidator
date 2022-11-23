@@ -1,0 +1,375 @@
+/*!
+ * Alan Da Silva - Viwari (https://codecanyon.net/user/viwari/portfolio)
+ * Copyright 2017 Berevi Collection
+ * Licensed (https://codecanyon.net/licenses/standard)
+ * See full license https://codecanyon.net/licenses/terms/regular
+ */
+
+/* Orange button */
+.btn-outline-orange {
+    color: #fd7e14;
+    background-color: transparent;
+    background-image: none;
+    border-color: #fd7e14;
+}
+
+.btn-outline-orange:hover {
+    color: #343a40;
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+
+.btn-outline-orange:focus {
+    box-shadow: 0 0 0 3px rgba(255,165,0,.5);
+}
+
+.btn-outline-orange:active {
+    color: #343a40;
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+
+.btn-orange {
+    color: #fff;
+    background-color: #fd7e14;
+    border-color: #e37112;
+    text-shadow: 1.5px 1.5px #474747;
+}
+
+.btn-orange:active {
+    background-color: #e59400;
+    background-image: none;
+    border-color: #fd8a2b;
+}
+
+.btn-orange:hover {
+    color: #fff;
+    background-color: #e37112;
+    border-color: #fd8a2b;
+    text-shadow: 1.5px 1.5px #474747;
+}
+
+.btn-orange:focus {
+    box-shadow: 0 0 0 3px rgba(255,165,0,.5);
+}
+
+.btn-orange.btn-lg {
+    padding: 0px 60px 3px;
+    font-size: 2.5rem;
+}
+
+/* Release notes */
+.blink_note {
+    animation: blinker 2.5s linear infinite;
+}
+
+.blink_note:hover {
+    animation: none;
+}
+
+@keyframes blinker {  
+    50% {
+        opacity: .3;
+    }
+}
+
+.link-blinker {
+    color: #ffffcc;
+}
+
+.link-blinker:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.oi-external-link {
+    color: #e5e5e5;
+}
+
+.brv-link-pos {
+    padding-top: 15px;
+}
+
+.brv-button-pos {
+    top: 400px;
+}
+
+/* Wave banner */
+.wave {
+    background-size: cover !important;
+    padding-right: 16px !important;
+}
+
+/* Side menu */
+.brv-side-menu {
+    background-color: #333;
+    background: linear-gradient(45deg, #282828 12%, transparent 0, transparent 88%, #282828 0),
+    linear-gradient(135deg, transparent 37%, #191919 0, #191919 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #282828 0, #282828 63%, transparent 0) #232323;
+    background: -webkit-linear-gradient(45deg, #282828 12%, transparent 0, transparent 88%, #282828 0),
+    -webkit-linear-gradient(135deg, transparent 37%, #191919 0, #191919 63%, transparent 0),
+    -webkit-linear-gradient(45deg, transparent 37%, #282828 0, #282828 63%, transparent 0) #232323;
+    background-size: 5px 5px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.brv-side-menu .list-group .active.list-group-item {
+    background: none #000;
+    border-color: #848484;
+    border-radius: 0 0 0 0 !important;
+    border-right: 1px solid #848484;
+    margin-right: -13px;
+    margin-left: -13px;
+}
+
+.brv-side-menu .list-group .active.list-group-item:hover {
+    background: none #000;
+}
+
+.brv-side-menu .list-group a.list-group-item {
+    color: #fff;
+    background-color: unset;
+    margin-right: -15px;
+    margin-left: -15px;
+    border: 1px solid rgba(0,0,0,0);
+    background: none;
+    z-index: 1;
+}
+
+.brv-side-menu .list-group a.list-group-item:hover {
+    background: #474747;
+}
+
+.brv-side-menu .list-group a.list-group-item:last-child {
+    margin-bottom: 5px;
+    margin-top: 1.5px;
+}
+
+/* Center masthead presentation */
+.masthead {
+    background-size: auto auto;
+    height: 640px;
+    background-color: rgb(93, 146, 154);
+}
+
+/* Panel logo */
+.logo-brv:after {
+    font-weight: bold;
+    content: "BEREVI"; 
+}
+
+.logo-c-brv:after {
+    content: "ollection"; 
+}
+
+@media screen and (max-width: 767px) {
+    .row-offcanvas-left.active .sidebar-offcanvas {
+        height: 100%;
+    }
+
+    .wave {
+        background-size: auto !important;
+    }
+
+    .logo-brv:after{
+        content: "BRV";   
+    }
+
+    .logo-c-brv:after {
+        content: ""; 
+    }
+
+    .row.row-offcanvas.row-offcanvas-left {
+        padding-left: 0;
+    }
+
+    .brv-item-marge {
+        padding-bottom: 10px;
+    }
+
+    .navbar-toggler {
+        float: right
+    }
+}
+
+/* Center jumbotron presentation */
+.jumbotron{
+    margin-bottom: 0;
+}
+
+body {
+    background-color: #d8d8d8;
+    min-width: fit-content;
+    padding-top: 70px;
+    padding-right: 0 !important;
+}
+
+/* Display devices compatibility */
+@media screen and (min-width: 1290px) {
+    body {
+        padding-top: 75px;
+    }
+}
+
+@media screen and (min-width: 1390px) {
+    body {
+        padding-top: 90px;
+    }
+}
+
+@media screen and (max-width: 868px), screen\9 {
+    .row.align-items-end.no-gutters {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 868px), screen\9 {
+    .row.align-items-end.no-gutters {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1124px), screen\9 {
+    .row.align-items-end.no-gutters {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: 1390px), screen\9 {
+    body {
+        padding-top: 75px;
+    }
+}
+
+@media screen and (max-width: 1290px), screen\9 {
+    body {
+        padding-top: 75px;
+    }
+}
+
+@media screen\0 {
+    .sidebar-offcanvas.brv-side-menu  {
+        height: 640px;
+        position: absolute;
+    }
+
+    .jumbotron.masthead {
+        width: 74%;
+        margin-left: 26%;
+    }
+}
+
+@media screen and (max-width: 767px), screen\9 {
+    .jumbotron.masthead {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Modal */
+.modal-backdrop.show {
+    opacity: 0;
+}
+
+.btn:hover, .close:hover {
+    cursor: pointer;
+}
+
+.modal-header {
+    color: #f2f2f2;
+    text-align: center;
+    border: 1px solid rgba(91, 91, 91, 1);
+}
+
+.modal-title {
+    text-align: center;
+    width: 100%;
+}
+
+.close {
+    color: #f2f2f2;
+}
+
+.close:hover {
+    color: #f2711c;
+}
+
+.modal-body {
+    background: linear-gradient(45deg, #363636 0%, transparent 0, transparent 100%, #363636 0),
+    linear-gradient(135deg, transparent 47%, #363636 0, #363636 53%, transparent 0),
+    linear-gradient(45deg, transparent 47%, #363636 0, #363636 53%, transparent 0) #3f3f3f;
+    background: -webkit-linear-gradient(45deg, #363636 0%, transparent 0, transparent 100%, #363636 0),
+    -webkit-linear-gradient(135deg, transparent 47%, #363636 0, #363636 53%, transparent 0),
+    -webkit-linear-gradient(45deg, transparent 47%, #363636 0, #363636 53%, transparent 0) #3f3f3f;
+    background-size: 8px 8px;
+    border-left: 1px solid rgba(91, 91, 91, 1);
+    border-right: 1px solid rgba(91, 91, 91, 1);
+    color: #f2f2f2;
+}
+
+.modal-footer {
+    background: linear-gradient(45deg, #363636 0%, transparent 0, transparent 100%, #363636 0),
+    linear-gradient(135deg, transparent 47%, #363636 0, #363636 53%, transparent 0),
+    linear-gradient(45deg, transparent 47%, #363636 0, #363636 53%, transparent 0) #3f3f3f;
+    background: -webkit-linear-gradient(45deg, #363636 0%, transparent 0, transparent 100%, #363636 0),
+    -webkit-linear-gradient(135deg, transparent 47%, #363636 0, #363636 53%, transparent 0),
+    -webkit-linear-gradient(45deg, transparent 47%, #363636 0, #363636 53%, transparent 0) #3f3f3f;
+    background-size: 8px 8px;
+    border: 1px solid rgba(91, 91, 91, 1);
+    border-top: 0 none;
+}
+
+.btn.btn-primary.brv {
+    border: 1px solid #b2b2b2;
+    background-color: #252525;
+    color: rgba(255, 255, 255, .7) !important;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: .1rem;
+    padding: .3rem 2.75rem;
+}
+
+.btn.btn-secondary.brv {
+    border: 1px solid #b2b2b2;
+    background-color: #252525;
+    color: rgba(255, 255, 255, .7) !important;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: .1rem;
+    padding: .3rem 1.75rem;
+}
+
+.modal-footer>:not(:last-child) {
+    margin-right: 2.25rem;
+}
+
+.btn.btn-primary.brv:hover, .btn.btn-secondary.brv:hover {
+    background-color: #252525;
+    color: rgba(255, 255, 255, .7) !important;
+    border: 1px solid #f2711c;
+}
+
+.btn.btn-primary.brv:focus, .btn.btn-secondary.brv:focus {
+    box-shadow: none;
+}
+
+.card.brv-card {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#historyScroll {
+    height: 290px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
+    @media screen and (min-width: 1391px) {
+        .container-fluid {
+            padding-top: 15px;
+        }
+    }
+}

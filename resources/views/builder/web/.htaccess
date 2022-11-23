@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+<IfModule !mod_suphp.c>
+	# Max 1GB
+	# php_value post_max_size 1024M
+	# Max 3 days
+	# php_value max_execution_time 259200
+	# Max 6000 vars
+	# php_value max_input_vars 6000
+</IfModule>

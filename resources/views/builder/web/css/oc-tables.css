@@ -1,0 +1,146 @@
+/*!
+ * Alan Da Silva - Viwari (https://codecanyon.net/user/viwari/portfolio)
+ * Copyright 2017 Berevi Collection
+ * Licensed (https://codecanyon.net/licenses/standard)
+ * See full license https://codecanyon.net/licenses/terms/regular
+ */
+
+.jumbotron {
+    padding: 3rem 1rem;
+}
+
+.row.row-offcanvas.row-offcanvas-left {
+    padding-left: 0;
+}
+
+.masthead-page {
+    background-size: auto auto;
+    height: auto;
+    background-color: rgb(93, 146, 154);
+    width: 100%;
+    margin-left: 0;
+    min-width: 350px;
+}
+
+.row-offcanvas-left {
+    left: 0;
+}
+
+.row-offcanvas {
+    position: relative;
+}
+
+.row-offcanvas-left .sidebar-offcanvas {
+    left: -100%;
+    display: none !important;
+}
+
+.sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+.d-md-none {
+    display: none !important;
+}
+
+.brv-app-button {
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -8px;
+}
+
+.sidebar-nav > .sidebar-brand span {
+    color: #fff;
+    background: none;
+    cursor: default;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: auto;
+    line-height: 70px;
+}
+
+.sidebar-nav li a.active {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li {
+    line-height: 50px;
+}
+
+#sidebar-wrapper {
+    background-color: #333;
+    background: linear-gradient(45deg, #282828 12%, transparent 0, transparent 88%, #282828 0),
+    linear-gradient(135deg, transparent 37%, #191919 0, #191919 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #282828 0, #282828 63%, transparent 0) #232323;
+    background: -webkit-linear-gradient(45deg, #282828 12%, transparent 0, transparent 88%, #282828 0),
+    -webkit-linear-gradient(135deg, transparent 37%, #191919 0, #191919 63%, transparent 0),
+    -webkit-linear-gradient(45deg, transparent 37%, #282828 0, #282828 63%, transparent 0) #232323;
+    background-size: 5px 5px;
+    top: 59px;
+}
+
+#sidebar-wrapper ul > li .active {
+    background: none #000;
+    border-color: #848484;
+    border-radius: 0 0 0 0 !important;
+    border-right: 1px solid #848484;
+    border: 1px solid #848484;
+    margin-right: 2px;
+}
+
+#sidebar-wrapper ul > li .active:hover {
+    background: none #000;
+}
+
+#sidebar-wrapper ul > li a:hover {
+    background: #474747;
+}
+
+#sidebar-wrapper ul > li a {
+    color: #fff;
+}
+
+.hide {
+    display: none;
+}
+
+td.details-control {
+    cursor: pointer;
+}
+
+.alert-light {
+    color: #212529;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.06);
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.ZebraDialog_Index {
+	z-index: 1031;
+}
+
+h3.brv-title {
+    color: #fff;
+    text-shadow: 1.5px 1.5px #474747;
+}
+
+p.brv-sub-title {
+    color: #fff;
+    text-shadow: 1.2px 1.2px #474747;
+}
+
+.brv-global {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px 0 1px 0;
+    border-radius: 5px;
+}
