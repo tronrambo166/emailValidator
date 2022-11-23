@@ -11,6 +11,8 @@ use SMTPValidateEmail\Validator as SmtpEmailValidator;
 use App\Models\RoleBasedEmails;
 use EmailChecker\EmailChecker;
 use Illuminate\Support\Facades\Session;
+use Auth;
+use DB;
 
 
 class builderController extends BaseController
@@ -48,11 +50,14 @@ class builderController extends BaseController
         { 
         $inputFile = $request->file('fileInput');
         $emails = fileController::convert($inputFile, ',');
-        if(!$emails) return "Please include a colum 'Emails' at line 1 in your cse file"; 
+        if(!$emails) return "File not readable!";
          foreach($emails as $e)
          {
+
+          if($e != ''){   
          $e = $this->clean($e);  
          $emails[$i] = $e;$i++; 
+          }
          }  
         }
         else
@@ -60,8 +65,10 @@ class builderController extends BaseController
         $all= explode(PHP_EOL,$request->emails); 
             foreach($all as $e)
             {
+             if($e != ''){     
              $e = $this->clean($e);  
-             $emails[$i] = $e; $i++; 
+             $emails[$i] = $e; $i++;
+             } 
             }
             
         }
@@ -102,7 +109,7 @@ class builderController extends BaseController
         { 
         $inputFile = $request->file('fileInput');
         $emails = fileController::convert($inputFile, ',');
-        if(!$emails) return "Please include a colum 'Emails' at line 1 in your cse file"; 
+        if(!$emails) return "File not readable!"; 
          foreach($emails as $e)
          {
          //$e = $this->clean($e);  
@@ -114,13 +121,16 @@ class builderController extends BaseController
         $all= explode(PHP_EOL,$request->emails); 
             foreach($all as $e)
             {
-             //$e = $this->clean($e);  
-             $emails[$i] = $e; $i++; 
+             //$e = $this->clean($e);
+             if($e != ''){  
+             $emails[$i] = $e; $i++;
+             } 
             }
             
         }
 
 // Emails are stored in $emails array();
+//echo '<pre>'; print_r($emails); echo '<pre>';  exit;
 $result = array();
 
   
@@ -186,37 +196,72 @@ if($name==$role) { $result[$j]['role']  = 'True'; break; }
  // echo '<pre>'; print_r($result); echo '<pre>';  exit;
 
 //ECHO TABLE 
-  
-echo '<hr><table cellpadding="10" cellspacing="10" border="1" style="font-family:sans-serif;margin-top: 15px; margin:auto;">
-<tr style="font-size:20px;background-color:black;color:white">
-    <td>Email</td> <td>Good</td> 
-    <td style="text-align:left">MX</td>
-    <td style="text-align:left">SMTP</td>
-    <td>Disposable</td>
-    <td>Role Based</td> </tr>  <td></td> </tr> <a style="float:right; background-color:azure;" href="./mail_rep_dld/">Download</a>';
+
+echo '<table cellpadding="12"  border="" style="float:left; border:none; font-family:monospace;margin-top: 37px; ">
+<tr style="font-size:14px;background-color:white;color:black";>
+<td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">Processed</td>
+
+     </tr>';
+
+  echo '<td style=" border:none; text-align:center;font-weight:bold;color:green">';
+  for($i=0;$i<4;$i++) {
+    echo '<span style="margin-top:15px;"> fisdfffdsdsfdle.txt</span>
+   <a style="float:right; font-size:12px; margin-bottom:15px;background-color:azure;" href="./mail_rep_dld/">Download</a></br></br>';
+   if($i==0) echo'<p style="background-color:azure;margin-top:15px;">Previous</p> ';
+}
+
+  echo '</td>';
+  echo '</tr></table><br><br>';  
+
+
+//ECHO TABLE 2
+echo '<table cellpadding="12"  border="" style="border:none; font-family:monospace;margin-top: 15px; margin:auto;">
+<tr style="font-size:14px;background-color:white;color:black";>
+    <td style="border:1px solid #dedde7;text-align:center;border-radius: 10px;" >Email</td> 
+    <td style="border:1px solid #dedde7;border-radius: 14px;width:120px; ">Good</td> 
+    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">MX</td>
+    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">SMTP</td>
+    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">Disposable</td>
+    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">Role Based</td>
+
+    
+
+       </tr> <a style="float:right; " href="./mail_rep_dld/"></a>';
 
   foreach($result as $res) {
-  echo '<tr>
-  <td style="font-weight:bold;background-color:azure;">'.$res['email'].'</td>';
+  echo '<tr style="margin-top:15px;">
+  <td style="text-align:center;font-weight:bold;background-color:#008353;color:white;">'.$res['email'].'</td>';
 
-  if($res['good']=='True') echo '<td style="font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="font-weight:bold;color:red;">No</td>';
+  if($res['good']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
+  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
 
-  if($res['mx']=='True') echo '<td style="font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="font-weight:bold;color:red;">No</td>';
+  if($res['mx']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
+  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
 
-  if($res['smtp']=='True') echo '<td style="font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="font-weight:bold;color:red;">No</td>';
+  if($res['smtp']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
+  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
 
-  if($res['dispose']=='True') echo '<td style="font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="font-weight:bold;color:red;">No</td>';
+  if($res['dispose']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
+  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
 
-  if($res['role']=='True') echo '<td style="font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="font-weight:bold;color:red;">No</td>';
+  if($res['role']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
+  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
+
+
 
     }
+
+
    
-echo '</tr></table><br><br>';
+echo '</tr></table><br><br>'; 
+
+
+//DB 
+//$user_id = Auth::id();
+//DB::table('files')->
+//insert(['user_id'=>$user_id, 'info'=>json_encode($result), 'file_name'=>$fileName]);
+//DB 
+
 Session::forget('mail_result');
 Session::put('mail_result',$result); Session::put('fileName',$fileName);
 Session::save();

@@ -19,12 +19,16 @@ class fileController extends Controller
         }
 
         // Deduplication by email
-        self::fileProcess($filename, 'email', ';');
+        self::fileProcess($filename, 'email', ';'); 
 
         $header = null;
         $data = array();
 
         // Converting file data to a table
+        $file = file_get_contents($filename);
+        $content = 'Emails'.PHP_EOL. $file;
+        file_put_contents($filename,$content);
+
         if (($handle = fopen($filename, 'r')) !== false) {
             while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
                 if (!$header) {
@@ -33,7 +37,7 @@ class fileController extends Controller
                       $min = min(count($header), count($row));
                     $data[] = array_combine(array_slice($header, 0, $min), array_slice($row, 0, $min));
                 }
-            }
+            }  //echo print_r($header); exit;
 
             fclose($handle);
         }
@@ -41,11 +45,12 @@ class fileController extends Controller
          $finalData = array(); $i=0;
           foreach($data as $d)
           {
-            if(!isset($d['Emails'])) return false;
-
+            //echo $d.PHP_EOL;
+            if($d['Emails'] != ''){
              $finalData[$i] = $d['Emails']; $i++;
+            }
           }
-          return $finalData;
+         return $finalData;
 
        //echo '<pre>'; print_r( $finalData); echo '<pre>';exit;
     }

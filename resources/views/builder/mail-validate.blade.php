@@ -55,13 +55,12 @@
         <!-- Custom script -->
         <script type="text/javascript" src="public/builder/js/oc-advanced.js"></script>
 
- <div class="  py-4"  style="max-height: 700px;background-color:white; "> 
-    <p class="h4 text-center"> Validate Email with details</p>
-    <p class="h4 text-center"> Validate (Syntax, Mx, Smtp, Disposal, Role etc.)</p>
+ <div class="py-4"  style="max-height: 700px;background-color:white; "> 
+    <p style="background: black;" class="font-weight-bold h4 text-center text-white py-3"> Validate Email with details</p>
+    <p class="py-2 small bg-light text-center"> Validate (Syntax, Mx, Smtp, Disposal, Role etc.)</p>
 </div> 
 
-  <div class=" card m-auto"  style="overflow: hidden;max-height: 700px;background:white;
-   width:82%; ">
+  <div class=" card mx-auto"  style="width: 65%;overflow: hidden;max-height: 700px;background:#f3f3f3a6; ">
 
    <!-- action="{{route('/clean_mail')}}" --> 
    <!-- action="{{route('/clean_mail')}}" -->
@@ -73,7 +72,7 @@
 
                        
 
-                        <div class="row card-body" style="background:#f7f7f7;">
+                        <div class="row card-body" style="background:#6fe3ce52;">
                             <div class="col-sm">
                                 <div class="form-group" id="usage">
                                     <label for="inputListName">Indicate the name of your list for export (optional)</label>
@@ -92,7 +91,7 @@
                                 </div>
                                 <div class="row form-group" id="reflex" > 
                                     <div class="col-sm-10"  >  <p class="small control-label"> insert a csv file containing your emails </p>
-                                    <small>(your file should contain a column named 'Emails' at first line, then put each email in a new line)</small>
+                                    <small></small>
                                 </div>
 
                                     <div class="col-sm-2" style="height: 60px;"  >  <input 
@@ -173,7 +172,7 @@
                         </div>
                       
                         <div class="d-flex justify-content-center">
-                            <button style="background: black;" id="launchs" type="submit" class="font-weight-bold text-light btn ">Validate emails </button>
+                            <button style="background: black;" id="launchs" type="submit" class="my-3 font-weight-bold text-light btn ">Validate emails </button>
                         </div>
                     </form>
                     </div>
