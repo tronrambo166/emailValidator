@@ -1,4 +1,6 @@
- <style type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+
+  <style type="text/css">
     
     .activ{
         color: #03e7bd;
@@ -18,47 +20,40 @@
                     </a>
                 </div>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-
- 
-
-
                 <!-- Navigation Links -->
-              <!--  <div class="mt-3 w-75 d-block hidden space-x-8 sm:-my-px sm:ml-0 sm:flex text-center">
+                <div class="mt-3 w-75 d-block hidden space-x-8 sm:-my-px sm:ml-0 sm:flex text-center">
                     <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('dashboard') ? 'activ' : '' }} " href="{{ route('dashboard') }}" >
-                        {{ __('Dashboard') }} -->
+                        {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                   
+                    <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold " href="./billing" :active="request()->routeIs('/billing')">
+                        {{ __('My Plan') }}
+                    </x-jet-nav-link>
 
 
 
-<!-- <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('cleaner') ? 'activ' : '' }}"  href="{{ route('/cleaner') }}"  > 
+<x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('cleaner') ? 'activ' : '' }}"  href="{{ route('/cleaner') }}"  > 
 {{__('Cleaner Tool')}} 
- </x-jet-nav-link> -->
-
-  <div class="mt-3 w-75 d-block hidden space-x-8 sm:-my-px sm:ml-0 sm:flex text-center">
-                    <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('dashboard') ? 'activ' : '' }} " href="{{ route('dashboard') }}" >
-                        {{ __('Emails From Text') }}
-                    </x-jet-nav-link>
-
- <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('single_validate') ? 'activ' : '' }}"  href="{{ route('/single_validate') }}">
-{{__('Single Verify')}} 
  </x-jet-nav-link>
 
  <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('validator') ? 'activ' : '' }}"  href="{{ route('/validator') }}">
-{{__('Bulk Verify')}} 
+{{__('Validator Tool')}} 
  </x-jet-nav-link>
 
- <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('history') ? 'activ' : '' }}"  href="{{ route('/history') }}">
-{{__('History')}} 
- </x-jet-nav-link>
+         
 
-  <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold " href="./billing" :active="request()->routeIs('/billing')">
-                        {{ __('Plans') }}
-                    </x-jet-nav-link>
+ <!--<div class="dropdown show" style="margin-top: 19px;">
 
 
+  <div class="dropdown-menu " style="background: rgb(25, 123, 133); margin-top: -2px;margin-left: -30px;position: absolute; " >
+
+    <a style="background: none;color: #fffcfc;"  href="{{ route('/cleaner') }}" class="nav-item small text-center dropdown-item   {{ Request::is('deposit') ? 'activ' : '' }}nav-link">Clean emails</a>
+
+    <a style="background: none;color: #fffcfc;"  href="{{ route('/validator')}}" class="nav-item small text-center dropdown-item   {{ Request::is('deposit') ? 'activ' : '' }}nav-link">Validate(with details)</a>
+ </div> </div> -->
+
+
+                    
 
                 </div>
             </div>
@@ -259,4 +254,9 @@
 </nav>
 
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+       
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
 

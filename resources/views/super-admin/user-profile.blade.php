@@ -8,22 +8,23 @@
                 <div class="card-body p-3">
                     <div class="row gx-4">
                         <div class="col-auto">
-                            <div class="avatar avatar-xxl position-relative">
-                                @if(empty($skit_user['photo']))
-                                    <img src="img/user-avatar-placeholder.png"
-                                         class="w-100 border-radius-lg shadow-sm">
-                                @else
+                            <div> @php $icon = explode(' ',$skit_user->name); @endphp
+                                                @if(empty($skit_user['photo']))
+                                                    <div
+                                                        class="avatar avatar-md bg-success-light border-radius-md p-2 ">
+                                                        <h6 class="text-success ">{{$icon['0']}}</h6>
+                                                    </div>
+                                                @else
 
-                                    <img src="uploads/{{$skit_user->photo}}" alt=""
-                                         class="w-100 border-radius-lg shadow-sm">
-                                @endif
-
-                            </div>
+                                                    <img src="{{PUBLIC_DIR}}/uploads/{{$skit_user->photo}}" alt=""
+                                                         class="avatar avatar-md">
+                                                @endif
+                                            </div>
                         </div>
                         <div class="col-auto my-auto">
                             <div class="h-100">
                                 <h5 class="mb-1">
-                                    {{$skit_user->first_name}} {{$skit_user->last_name}}
+                                    {{$skit_user->name}}
 
                                 </h5>
                                 <p class="mb-0 font-weight-bold text-sm">
@@ -45,7 +46,7 @@
                     </div>
                     <ul class="list-group">
                         <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong
-                                class="text-dark">{{__('Full Name:')}}</strong> {{$skit_user->first_name}} {{$skit_user->last_name}}
+                                class="text-dark">{{__('Full Name:')}}</strong> {{$skit_user->name}}
                         </li>
                         <li class="list-group-item border-0 ps-0 text-sm"><strong
                                 class="text-dark">{{__('Mobile Number:')}}</strong> {{$skit_user->mobile_number}}</li>
@@ -62,26 +63,7 @@
 
             </div>
         </div>
-        <div class="col-md-7">
-            @if($skit_user_workspace->subscribed)
-
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="mb-0 fw-bolder">{{__('Billing information')}}</h6>
-                        @if($plan)
-
-                            <p class="mt-4"><strong>{{__('Subscribed Plan')}}:</strong> {{$plan->name}}</p>
-                        @endif
-                        @if(!empty($skit_user_workspace->next_renewal_date))
-                            <p><strong>{{__('Next renewal date')}}:</strong> {{date('M d Y',strtotime($workspace->next_renewal_date))}}</p>
-                        @endif
-                    </div>
-                </div>
-
-            @endif
-
-        </div>
-
+      
 
     </div>
 @endsection

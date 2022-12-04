@@ -41,12 +41,12 @@ class SuperAdminBaseController extends Controller
 
             $this->modules = null;
 
-            if ($this->workspace->plan_id) {
-                $plan = SubscriptionPlan::find($this->workspace->plan_id);
-                if ($plan && $plan->modules) {
-                    $this->modules = json_decode($plan->modules);
-                }
-            }
+            // if ($this->workspace->plan_id) {
+            //     $plan = SubscriptionPlan::find($this->workspace->plan_id);
+            //     if ($plan && $plan->modules) {
+            //         $this->modules = json_decode($plan->modules);
+            //     }
+            // }
 
             View::share("modules", $this->modules);
 

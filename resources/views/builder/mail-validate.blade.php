@@ -10,7 +10,7 @@
     margin-left: 0.25rem;
     font-family: inherit;
 }
-</style>
+</style> 
         <!-- Kartik fileinput -->
          <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -55,12 +55,12 @@
         <!-- Custom script -->
         <script type="text/javascript" src="public/builder/js/oc-advanced.js"></script>
 
- <div class="py-4"  style="max-height: 700px;background-color:white; "> 
-    <p style="background: black;" class="font-weight-bold h4 text-center text-white py-3"> Validate Email with details</p>
+ <div class="mb-4"  style="max-height: 700px;background-color:#f3f6f9; "> 
+    <p style="background: black;" class="font-weight-bold h4 text-center text-white py-3"> Validate Bulk Emails</p>
     <p class="py-2 small bg-light text-center"> Validate (Syntax, Mx, Smtp, Disposal, Role etc.)</p>
 </div> 
 
-  <div class=" card mx-auto"  style="width: 65%;overflow: hidden;max-height: 700px;background:#f3f3f3a6; ">
+  <div class=" card mx-auto shadow"  style="width: 55%;overflow: hidden;max-height: 700px;background:#ffffff; ">
 
    <!-- action="{{route('/clean_mail')}}" --> 
    <!-- action="{{route('/clean_mail')}}" -->
@@ -72,13 +72,13 @@
 
                        
 
-                        <div class="row card-body" style="background:#6fe3ce52;">
+                        <div class="row card-body" style="background:#ffffff;font-family: revert;color: black;">
                             <div class="col-sm">
                                 <div class="form-group" id="usage">
-                                    <label for="inputListName">Indicate the name of your list for export (optional)</label>
+                                    <label class="font-weight-bold" for="inputListName">Name of your list for export (optional)</label>
                                     <input 
                                     type="text" 
-                                    class="form-control" 
+                                    class="form-control w-75" 
                                     id="inputListName" 
                                     name="name" 
                                     aria-describedby="nameHelp" 
@@ -87,14 +87,14 @@
                                 </div>
                                 <div class="form-group" id="options">
                                     <label for="textareaListEmails">Copy/paste your email addresses below <small>(separeate emails by new line)</small></label>
-                                    <textarea class="form-control" id="textareaListEmails" name="emails" rows="11" spellcheck="false"></textarea>
+                                    <textarea class="form-control" id="textareaListEmails" name="emails" rows="6" spellcheck="false"></textarea>
                                 </div>
                                 <div class="row form-group" id="reflex" > 
-                                    <div class="col-sm-10"  >  <p class="small control-label"> insert a csv file containing your emails </p>
+                                    <div class="col-sm-8"  >  <p class="small control-label"> insert a csv or txt file containing your emails </p>
                                     <small></small>
                                 </div>
 
-                                    <div class="col-sm-2" style="height: 60px;"  >  <input 
+                                    <div class="col-sm-4" style="height: 60px;"  >  <input 
                                     id="file-input" 
                                     name="fileInput" 
                                     type="file" 
@@ -109,21 +109,6 @@
                                 </div>
 
 
-                               <div class="form-group" id="contributing">
-                                   <!--  <label for="select-choices">Choose the cleaning level of your email addresses</label>
-                                    <select 
-                                    class="cleaning-choices" 
-                                    id="select-choices" 
-                                    name="select-choices" 
-                                    data-placeholder="Select an cleaning option" 
-                                    style="width: 100%;" 
-                                    required>
-                                        <option></option>
-                                        <option value="1">Level 1 - Validating Email</option>
-                                        <option value="2">Level 2 - Level 1 + Domain Validation</option>
-                                        <option value="3">Level 3 - Level 1 + Level 2 + SMTP Email Validation</option>
-                                    </select> -->
-                                </div>
                             </div> 
 
 
@@ -167,15 +152,15 @@
                                 <hr> 
 
                             </div> -->
-
-
+                            <div class="clearfix row"></div>
+                             <button style="background: #041fa5;" id="launchs" type="submit" class="my-3 font-weight-bold text-light btn d-block w-25 ml-auto">Validate </button>
                         </div>
                       
-                        <div class="d-flex justify-content-center">
-                            <button style="background: black;" id="launchs" type="submit" class="my-3 font-weight-bold text-light btn ">Validate emails </button>
-                        </div>
+                        
                     </form>
                     </div>
+
+                    <div class="py-5"></div>
 
 
                     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

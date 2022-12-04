@@ -31,15 +31,18 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 //BUILDER ROUTES
-Route::get('user/cleaner', [builderController::class, "home"])->name('user/cleaner');
-Route::get('user/validator', [builderController::class, "validator"])->name('user/validator');
-
+Route::get('/cleaner', [builderController::class, "home"])->name('/cleaner');
 Route::get('/lang/change', [SuperAdminController::class, "change"])->name('changeLang');
 Route::post('/clean_mail', [builderController::class, "clean_mail"])->name('/clean_mail');
 
-//Validate with details
+Route::get('/validator', [builderController::class, "validator"])->name('/validator');
+Route::get('/single_validate', [builderController::class, "single_mail"])->name('/single_mail');
+Route::get('/history', [builderController::class, "history"])->name('/history');
+
+//Internal Validate with details
+Route::post('/single_validate', [builderController::class, "single_validate"])->name('/single_validate');
 Route::post('/mx_check', [builderController::class, "mx_check"])->name('/mx_check');
-Route::get('/mail_rep_dld', [builderController::class, "mail_rep_dld"])->name('mail_rep_dld');
+Route::get('/mail_rep_dld/{info}/{fileName}', [builderController::class, "mail_rep_dld"])->name('mail_rep_dld');
 //BUILDER ROUTES
 
 Route::get("/super-admin/dashboard", [
@@ -160,7 +163,7 @@ Route::get("/documents", [DocumentController::class, "documents"]);
 Route::get("/profile", [ProfileController::class, "profile"]);
 Route::get("/staff", [ProfileController::class, "staff"]);
 Route::get("/settings", [SettingController::class, "settings"]);
-Route::get("/billing", [SettingController::class, "billing"]);
+//Route::get("/billing", [SettingController::class, "billing"]);
 Route::get("/delete/{action}/{id}", [DeleteController::class, "delete"]);
 
 Route::post("/save-reset-password", [
@@ -268,7 +271,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    //Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
+    Route::get('/dashboard', [builderController::class, "textToEmails"])->name('dashboard');
+    Route::post('/ExtractEmails', [builderController::class, "ExtractEmails"])->name('/ExtractEmails');
 });

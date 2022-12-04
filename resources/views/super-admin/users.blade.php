@@ -6,11 +6,13 @@
                 {{__('Users')}}
             </h5>
         </div>
-        <div class="col text-end">
+
+       <!-- <div class="col text-end">
             <a class="btn btn-info " href="./add-user"><i class="fas fa-plus"></i>&nbsp;&nbsp;
                 {{__(' Add New User')}}
             </a>
-        </div>
+        </div> -->
+
     </div>
 <div class="">
         <div class="row">
@@ -23,7 +25,10 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('User')}}</th>
 
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('Workspace Name')}}</th>
+
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('Status')}}</th>
+
+                                    
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('Account Created')}}</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
@@ -35,10 +40,15 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div>
+                                                   
+
                                                     @if(empty($workspace_user['photo']))
+
+                                                     @php $icon = explode(' ',$workspace_user->name); @endphp
+
                                                         <div
                                                             class="avatar avatar-md bg-success-light  border-radius-md p-2 ">
-                                                            <h6 class="text-success ">{{$workspace_user->first_name['0']}}{{$workspace_user->last_name['0']}}</h6>
+                                                            <h6 class="text-success ">{{$icon[0]}}</h6>
                                                         </div>
                                                     @else
 
@@ -47,17 +57,29 @@
                                                     @endif
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center px-3">
-                                                    <h6 class="mb-0 text-sm">{{$workspace_user->first_name}} {{$workspace_user->last_name}}</h6>
+                                                    <h6 class="mb-0 text-sm">{{$workspace_user->name}}</h6>
                                                     <p class="text-xs text-secondary mb-0">{{$workspace_user->email}}</p>
                                                 </div>
                                             </div>
                                         </td>
 
-                                        <td class="align-middle text-center text-sm">
+                                      <!--  <td class="align-middle text-center text-sm">
                                             @if(!empty($workspaces[$workspace_user->workspace_id]))
                                                 {{$workspaces[$workspace_user->workspace_id]->name}}
                                             @endif
-                                        </td>
+                                        </td> -->
+
+                                        <td class="align-middle text-sm">
+                                        @if($workspace_user->stripe_id !== null)
+                                           
+                                                <span class="badge badge-sm bg-success-light text-success">{{__('Subscribed')}}</span>
+                                            @else
+                                                <span class="badge badge-sm bg-pink-light text-danger">{{__('Not Subscribed')}}</span>
+                                            @endif
+                                        
+
+                                    </td>
+
                                         <td class="align-middle text-center">
                                             <span
                                                 class="text-secondary text-xs font-weight-bold">{{$workspace_user->created_at}}</span>

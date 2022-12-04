@@ -126,8 +126,8 @@ class ProfileController extends BaseController
     public function userPost(Request $request)
     {
         $request->validate([
-            "first_name" => "required|string|max:100",
-            "last_name" => "required|string|max:100",
+            "name" => "required|string|max:100",
+            
             "email" => "required|email",
             "phone" => "nullable|string|max:50",
             "password" => "required|string|max:50",
@@ -152,8 +152,8 @@ class ProfileController extends BaseController
             $user->workspace_id = $this->user->workspace_id;
         }
 
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
+        $user->name = $request->name;
+       
         $user->password = Hash::make($request->password);
         $user->email = $request->email;
         $user->phone_number = $request->phone_number;
@@ -168,7 +168,7 @@ class ProfileController extends BaseController
         $user->country = $request->country;
         $user->language = $request->language;
         $user->zip = $request->zip;
-        $user->save();
+        $user->update();
 
         if ($this->user->super_admin) {
             return redirect("super-admin/users");

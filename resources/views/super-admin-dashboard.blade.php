@@ -100,7 +100,7 @@
 
 
 
-    <div class="row mt-2">
+    <!--<div class="row mt-2">
         <div class="col-lg-12">
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
@@ -184,7 +184,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="row">
         <div class="col-md-7 mt-4">
@@ -204,14 +204,14 @@
                             </thead>
                             <tbody>
                             @foreach($recent_users as $skit_user)
-                                <tr>
+                                <tr> 
                                     <td>
                                         <div class="d-flex px-2 py-1">
-                                            <div>
+                                            <div> @php $icon = explode(' ',$skit_user->name); @endphp
                                                 @if(empty($skit_user['photo']))
                                                     <div
                                                         class="avatar avatar-md bg-success-light border-radius-md p-2 ">
-                                                        <h6 class="text-success ">{{$skit_user->first_name['0']}}{{$skit_user->last_name['0']}}</h6>
+                                                        <h6 class="text-success ">{{$icon['0']}}</h6>
                                                     </div>
                                                 @else
 
@@ -220,7 +220,7 @@
                                                 @endif
                                             </div>
                                             <div class="d-flex flex-column justify-content-center px-3">
-                                                <h6 class="mb-0 text-sm">{{$skit_user->first_name}} {{$skit_user->last_name}}</h6>
+                                                <h6 class="mb-0 text-sm">{{$skit_user->name}} </h6>
                                                 <p class="text-xs text-secondary mb-0">{{$skit_user->email}}</p>
                                             </div>
                                         </div>
@@ -229,6 +229,19 @@
                                         <span
                                             class="text-secondary text-xs font-weight-bold">{{$skit_user->created_at}}</span>
                                     </td>
+
+
+                                    <td class="align-middle text-sm">
+                                        @if($skit_user->stripe_id !== null)
+                                           
+                                                <span class="badge badge-sm bg-success-light text-success">{{__('Subscribed')}}</span>
+                                            @else
+                                                <span class="badge badge-sm bg-pink-light text-danger">{{__('Not Subscribed')}}</span>
+                                            @endif
+                                        
+
+                                    </td>
+
                                     <td class="align-middle">
                                         <div class="ms-auto text-end">
 
@@ -246,7 +259,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5 mt-4">
+
+       <!-- <div class="col-md-5 mt-4">
             <div class="card">
                 <div class="card-header pb-0 px-3">
                     <h6 class="mb-0">{{__('Plans')}}</h6>
@@ -269,7 +283,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
+
     </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
        

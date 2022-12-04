@@ -28,16 +28,11 @@
                                     <div class="row mt-3">
                                         <div class="col-12 col-sm-6">
                                             <label>{{__('First Name')}}</label><label class="text-danger">*</label>
-                                            <input name="first_name" class="multisteps-form__input form-control"
+                                            <input name="name" class="multisteps-form__input form-control"
                                                    type="text"
-                                                   @if (!empty($selected_user)) value="{{$selected_user->first_name}}" @endif />
+                                                   @if (!empty($selected_user)) value="{{$selected_user->name}}" @endif />
                                         </div>
-                                        <div class="col-12 col-sm-6 mt-3 mt-sm-0">
-                                            <label>{{__('Last Name')}}</label><label class="text-danger">*</label>
-                                            <input name="last_name" class="multisteps-form__input form-control"
-                                                   type="text"
-                                                   @if (!empty($selected_user)) value="{{$selected_user->last_name}}" @endif />
-                                        </div>
+                                        
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-md-12">

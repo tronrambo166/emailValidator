@@ -318,10 +318,10 @@ class SuperAdminController extends SuperAdminBaseController
 
             $skit_user_workspace = Workspace::find($skit_user->workspace_id);
 
-            if(  $skit_user_workspace->plan_id)
-            {
-                $plan = SubscriptionPlan::find( $skit_user_workspace->plan_id);
-            }
+            // if(  $skit_user_workspace->plan_id)
+            // {
+            //     $plan = SubscriptionPlan::find( $skit_user_workspace->plan_id);
+            // }
 
 
         }
@@ -332,7 +332,7 @@ class SuperAdminController extends SuperAdminBaseController
             "layout" => "super-admin-portal",
             "skit_user" => $skit_user ,
             "skit_user_workspace"=>  $skit_user_workspace,
-            "plan"=> $plan,
+            //"plan"=> $plan,
         ]);
     }
     public function addUser(Request $request)
