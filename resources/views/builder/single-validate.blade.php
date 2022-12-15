@@ -55,11 +55,12 @@
         <!-- Custom script -->
         <script type="text/javascript" src="public/builder/js/oc-advanced.js"></script>
 
- <div class="mb-5"  style="max-height: 700px;background-color:white; "> 
-    <p style="background: black;" class="font-weight-bold h4 text-center text-white py-3"> Validate Single Email</p>
+ <div class="mb-4"  style="max-height: 700px;background-color:white; "> 
+    <p style="background: white;" class="font-weight-bold h5 text-center text-secondary py-3"> Validate Single Email</p>
 </div> 
 
-  <div class=" card mx-auto shadow"  style="width: 50%;overflow: hidden;max-height: 700px;background:#f3f3f3a6; ">
+<div class="row w-75 mx-auto" style="max-height: 200px;">
+  <div class=" card mx-auto shadow"  style="width: 50%;overflow: hidden;max-height: 200px;background:white; ">
 
    <!-- action="{{route('/clean_mail')}}" --> 
    <!-- action="{{route('/clean_mail')}}" -->
@@ -69,31 +70,95 @@
 
     <form  method="post" action="{{route('/single_validate')}}" enctype="multipart/form-data">@csrf
 
-                       
-
                         <div class="row card-body  " style="background:#ffffff;font-family: revert;color: black;">
-                            <div class="col-sm">
-                                <div class="form-group" id="usage">
+                            
+                                <div class="py-0 my-0 font-weight-bold form-group" id="usage">
                                     <label for="inputListName">Enter email to verify</label>
                                     
                                 </div>
-                                <div class="form-group" id="options">
-                                    <label for="textareaListEmails"></small></label>
+                                <div class="form-group py-0 " id="options">
+                                    <label for="textareaListEmails"></label>
                                     <input type="text" class="w-75 form-control" id="textareaListEmails" name="emails" spellcheck="false" />
 
                                      <button style="background: black;" id="launchs" type="submit" class="my-3 d-inline font-weight-bold text-light btn ">Validate</button>
-                                </div>
-                                
-
-                            </div> 
-
-
-
-                        </div>
-                      
-                       
+                                </div>      
+                            </div>       
                     </form>
                     </div>
+
+
+  <div id="results" class="col-sm-5 px-0 card mx-auto shadow"  style="max-height: 700px;font-size: 13px;background:white; ">
+     <p style="color: darkslategrey;" class="px-0 font-weight-bold h5 text-center  py-4"> Results History</p> 
+   
+  <table class="table tabil mb-4 mx-auto" style="color:black;">
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Emails</th>
+      <th class="text-center" scope="col">Status</th> 
+      <th class="text-center" scope="col">Type</th> 
+         
+    </tr>
+  </thead>
+  <tbody id="songs">
+  <?php $cnt=0; ?>
+   @foreach($all as $email) <?php $cnt++; ?>
+   @if($cnt!=1)
+    <tr id="loading">  
+      <td scope="row" class="text-center"> {{$email->email}} </td>
+       <td scope="row" class="text-center"> {{$email->valid}} </td>
+       <td scope="row" class="text-center"> {{$email->type}} </td>
+       
+        <!--<td scope="row" class="text-center"> 
+            @if($email->role == 'True') Role Based @else Free @endif </td> -->
+      
+    </tr>
+   @endif
+   @endforeach
+
+  </tbody>
+</table>
+</div>
+
+</div>
+
+
+@if(Session::has('single_check') && isset($current_check))
+<div class="row w-75 mx-auto">
+  <div id="single results" class="col-sm-6 ml-4 px-0 mt-4 card  shadow"  style="max-height: 700px;background:white; ">
+
+<div class="px-4 pt-3">
+     <p  class=" h6 px-0 font-weight-bold  py-1"> 
+     Email address is 
+     @if($current_check->valid == 'Valid')
+     <span class="text-success">VALID</span>
+     @else  <span class="text-danger">INVALID</span> @endif </p> <hr>
+
+      <p  class=" small font-weight-bold  "> 
+     <span class="font-weight-bold text-secondary">Email: </span>{{$current_check->email}}</p>
+
+      <p  class=" small font-weight-bold  "> 
+     <span class="font-weight-bold text-secondary">Status: </span>{{$current_check->valid}}</p>
+
+      <p  class=" small font-weight-bold  "> 
+     <span class="font-weight-bold text-secondary">SMTP: </span>{{$current_check->smtp}}</p>
+
+      <p  class=" small font-weight-bold  "> 
+     <span class="font-weight-bold text-secondary">Type: </span>{{$current_check->type}}</p>
+      <p  class=" small font-weight-bold  "> 
+
+      <p  class=" small font-weight-bold  "> 
+     <span class="font-weight-bold text-secondary">Disposable: </span>{{$current_check->dispose}}</p>
+
+      <p  class=" small font-weight-bold  "> 
+     <span class="font-weight-bold text-secondary">Role based: </span>{{$current_check->role}}</p>
+
+
+     
+</div>
+
+</div>
+       </div>   @endif            
+
                     <div class="py-5"></div>
 
                     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

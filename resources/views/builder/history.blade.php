@@ -4,7 +4,7 @@
 
 <div class="row mx-auto shadow w-75 my-4" style="width:90%; background:#ffffff;color:black">  
          <div class="col-md-8 mx-auto"> 
-            <h4 class="text-center my-3">Verification History</h4>
+            <h4 class="text-center my-4">Verification History <span class="small">(Bulk)</span></h4>
 
             <table class="table tabil mb-4 mx-auto" style="color:black;">
   <thead>
@@ -26,7 +26,25 @@
       <td scope="row" class="text-center"> {{$fileData->date}} </td>
        <td scope="row" class="text-center"> {{$fileData->file_name}} </td>
          <td  scope="row" class="text-center small">
-     <a class="text-center" style=" font-size:12px;color:black; margin-bottom:15px;" href="{{url('/mail_rep_dld/'.$info.'/'.$fileData->file_name)}}">Download</a>
+
+          <div class="row">
+            <a class="text-center text-success font-weight-bold" style=" font-size:12px;color:black; margin-bottom:5px;" href="{{url('/mail_rep_dld/'.$info.'/'.$fileData->file_name.'/valid')}}">Valid emails</a>
+          </div>
+
+           <div class="row">
+            <a class="text-center text-danger font-weight-bold" style=" font-size:12px;color:black; margin-bottom:5px;" href="{{url('/mail_rep_dld/'.$info.'/'.$fileData->file_name.'/invalid')}}">Invalid emails</a>
+          </div>
+
+           <div class="row">
+            <a class="text-center text-secondary font-weight-bold" style=" font-size:12px;color:black; margin-bottom:5px;" href="{{url('/mail_rep_dld/'.$info.'/'.$fileData->file_name.'/dispose')}}">Disposeable emails</a>
+          </div>
+
+           <div class="row">
+            <a class="text-center font-weight-bold" style=" font-size:12px;color:black; margin-bottom:5px;" href="{{url('/mail_rep_dld/'.$info.'/'.$fileData->file_name.'/role')}}">Role based emails</a>
+          </div>
+     
+
+     
          
         </td>
     </tr>

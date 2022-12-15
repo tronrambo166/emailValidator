@@ -1,12 +1,16 @@
  <style type="text/css">
     
+    .link{
+        color: white;
+        }
+
     .activ{
         color: #03e7bd;
         border-bottom: 1px solid #03e7bd;
         }
 </style>
 
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" style="background:#35a13de8" class=" border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 mx-5 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 w-75 mx-auto px-1" style="">
@@ -38,23 +42,23 @@
  </x-jet-nav-link> -->
 
   <div class="mt-3 w-75 d-block hidden space-x-8 sm:-my-px sm:ml-0 sm:flex text-center">
-                    <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('dashboard') ? 'activ' : '' }} " href="{{ route('dashboard') }}" >
+                    <x-jet-nav-link style="text-decoration: none;" class="link px-2 mx-3 font-weight-bold {{ Request::is('dashboard') ? 'activ' : '' }} " href="{{ route('dashboard') }}" >
                         {{ __('Emails From Text') }}
                     </x-jet-nav-link>
 
- <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('single_validate') ? 'activ' : '' }}"  href="{{ route('/single_validate') }}">
+ <x-jet-nav-link style="text-decoration: none;" class=" link px-2 mx-3 font-weight-bold {{ Request::is('single_validate') ? 'activ' : '' }}"  href="{{ route('/single_validate') }}">
 {{__('Single Verify')}} 
  </x-jet-nav-link>
 
- <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('validator') ? 'activ' : '' }}"  href="{{ route('/validator') }}">
+ <x-jet-nav-link style="text-decoration: none;" class="link px-2 mx-3 font-weight-bold {{ Request::is('validator') ? 'activ' : '' }}"  href="{{ route('/validator') }}">
 {{__('Bulk Verify')}} 
  </x-jet-nav-link>
 
- <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold {{ Request::is('history') ? 'activ' : '' }}"  href="{{ route('/history') }}">
+ <x-jet-nav-link style="text-decoration: none;" class="link px-2 mx-3 font-weight-bold {{ Request::is('history') ? 'activ' : '' }}"  href="{{ route('/history') }}">
 {{__('History')}} 
  </x-jet-nav-link>
 
-  <x-jet-nav-link style="text-decoration: none;" class="px-2 mx-3 font-weight-bold " href="./billing" :active="request()->routeIs('/billing')">
+  <x-jet-nav-link style="text-decoration: none;" class="link px-2 mx-3 font-weight-bold " href="./billing" :active="request()->routeIs('/billing')">
                         {{ __('Plans') }}
                     </x-jet-nav-link>
 

@@ -236,68 +236,55 @@ $i=0;
 $files=DB::table('files')->where('user_id',$user_id)->orderBy('id','DESC')->get();
 
 
-//ECHO TABLE 
-
-echo '<table cellpadding="12"  border="" style="float:left; border:none; font-family:monospace;margin-top: 37px; ">
-<tr style="font-size:14px;background-color:white;color:black";>
-<td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">Processed</td>
-
-     </tr>';
-
-  echo '<td style=" border:none; text-align:center;font-weight:bold;color:green">';
-
-  foreach($files as $fileData) { 
-    $info = str_replace('{','-',str_replace('"',';',$fileData->info));
-
-    echo '<span style="margin-top:15px;">'.$fileData->file_name.'</span>
-   <a style="float:right; font-size:12px;color:black; margin-bottom:15px;" href="./mail_rep_dld/'.$info.'/'.$fileData->file_name.'">Download</a></br></br>';
-   if($i==0) echo'<p style="background-color:azure;margin-top:15px;">Previous</p> ';$i++;
-}
-
-  echo '</td>';
-  echo '</tr></table><br><br>';  
 
 
 //ECHO TABLE 2
-echo '<table cellpadding="12"  border="" style="border:none; font-family:monospace;margin-top: 15px; margin:auto;">
-<tr style="font-size:14px;background-color:white;color:black";>
-    <td style="border:1px solid #dedde7;text-align:center;border-radius: 10px;" >Email</td> 
-    <td style="text-align:center;border:1px solid #dedde7;border-radius: 14px;width:120px; ">Good</td> 
-    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">MX</td>
-    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">SMTP</td>
-    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">Disposable</td>
-    <td style="border:1px solid #dedde7;width:120px; border-radius: 10px;text-align:center;">Role Based</td>
+echo '<div style="width:65%; margin:auto; margin-top:55px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
+<h3 style="font-family:system-ui;text-align:center; color:#008353;"> Validation Result 
+<a style="float:right; background-color:#eff1f1; font-size:13px;padding:5px; text-decoration:none;color:darkgray;" href="./validator" >Back</a>
+</h3>
+
+
+<table cellpadding="13"  style="display:block;  font-family:system-ui;margin-top: 15px; margin:auto;">
+
+<tr style="font-size:15px;background-color:white;color:grey";>
+    <td style="text-align:left;border-radius: 10px;" >Email</td> 
+    <td style="text-align:center;border-radius: 14px;width:120px; ">Good</td> 
+    <td style="width:120px; border-radius: 10px;text-align:center;">MX</td>
+    <td style="width:120px; border-radius: 10px;text-align:center;">SMTP</td>
+    <td style="width:120px; border-radius: 10px;text-align:center;">Disposable</td>
+    <td style="width:120px; border-radius: 10px;text-align:center;">Role Based</td>
 
     
 
-       </tr> <a style="float:right; " href="./mail_rep_dld/"></a>';
+       </tr>  <hr>  <tbody>';
 
   foreach($result as $res) {
-  echo '<tr style="margin-top:15px;">
-  <td style="text-align:center;font-weight:bold;background-color:#008353;color:white;">'.$res['email'].'</td>';
+  echo '<tr style="font-size:12px; border-bottom:1px solid grey;margin-top:25px;">
+  <td style="text-align:left;font-weight:500;color:#000000c7;">'.$res['email'].'</td>';
 
-  if($res['good']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
+  if($res['good']=='True') echo '<td style="text-align:center;font-weight:500;color:green">YES</td>'; 
+  else echo '<td style="text-align:center;font-weight:500;color:indianred;">NO</td>';
 
-  if($res['mx']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
+  if($res['mx']=='True') echo '<td style="text-align:center;font-weight:500;color:green">YES</td>'; 
+  else echo '<td style="text-align:center;font-weight:500;color:indianred;">NO</td>';
 
-  if($res['smtp']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
+  if($res['smtp']=='True') echo '<td style="text-align:center;font-weight:500;color:green">YES</td>'; 
+  else echo '<td style="text-align:center;font-weight:500;color:indianred;">NO</td>';
 
-  if($res['dispose']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
+  if($res['dispose']=='True') echo '<td style="text-align:center;font-weight:500;color:green">YES</td>'; 
+  else echo '<td style="text-align:center;font-weight:500;color:indianred;">NO</td>';
 
-  if($res['role']=='True') echo '<td style="text-align:center;font-weight:bold;color:green">Yes</td>'; 
-  else echo '<td style="text-align:center;font-weight:bold;color:black;">No</td>';
+  if($res['role']=='True') echo '<td style="text-align:center;font-weight:500;color:green">YES</td>'; 
+  else echo '<td style="text-align:center;font-weight:500;color:indianred;">NO</td>';
 
-
+echo '</tr>';
 
     }
 
 
    
-echo '</tr></table><br><br>'; 
+echo '</tbody> </table> </div> <br><br>'; 
 
 Session::forget('mail_result');
 Session::put('mail_result',$result); Session::put('fileName',$fileName);
@@ -316,24 +303,64 @@ Session::save();
     }
 
 
-public function mail_rep_dld($result,$name)
+public function mail_rep_dld($result,$name,$type)
 { 
 $result = str_replace('-','{',str_replace(';','"',$result));
 $result= json_decode($result);
-///print_r($result); exit;
+//echo '<pre>'; print_r($result);echo '<pre>';  exit;
+$fileName= $name; $i=0;//'emails'.uniqid().'.txt';
+$cat_result=array();
 
-$fileName= $name;//'emails'.uniqid().'.txt';
+if($type=='valid')
+{
+    foreach($result as $res)
+        if($res->smtp == 'True')
+            $cat_result[]=$res->email;
+
+        //return $cat_result;
+}
+
+else if($type=='invalid')
+{
+    foreach($result as $res)
+        if($res->smtp == 'False')
+            $cat_result[]=$res->email;
+
+        //return $cat_result;
+}
+
+else if($type=='dispose')
+{
+    foreach($result as $res)
+        if($res->dispose == 'True')
+            $cat_result[]=$res->email;
+
+        //return $cat_result;
+}
+
+ else if($type=='role')
+ {
+    foreach($result as $res)
+        if($res->role == 'True')
+            $cat_result[]=$res->email;
+
+        //return $cat_result;
+ }
 
 //DOWNLOAD 
+
+       // foreach($result as $res)
+       //  { 
+       //      $res->email = $emails[$i]; $i++;
+       //  } echo '<pre>'; print_r($result);echo '<pre>';  exit;
+
         header("Content-type: text/csv");
         header("Cache-Control: no-store, no-cache");
         header('Content-Disposition: attachment; filename='.$fileName);
         $file = fopen('php://output','w');
-        foreach($result as $res)
-        { 
-         foreach($res as $key => $value) {  
-            echo $key.' = '.$value.PHP_EOL;
-             } echo PHP_EOL;
+        foreach($cat_result as $res)
+        {        
+            echo $res.PHP_EOL;     
          }
            
 
@@ -342,8 +369,11 @@ $fileName= $name;//'emails'.uniqid().'.txt';
 
 //SINGLE_______________________________________________________________________________________
 public function single_mail(Request $request)
-    { 
-        return view('builder.single-validate');
+    {   
+        $user_id = Auth::id();
+        $current_check = DB::table('single_check')->latest('id')->first();
+        $all = DB::table('single_check')->where('user_id',$user_id)->latest('id')->get();
+        return view('builder.single-validate', compact('current_check','all'));
     }
  public function single_validate(Request $request)
     {   
@@ -431,7 +461,6 @@ $res = $checker->isValid($email);     // true
 if($res == 1) $result[$j]['dispose']='False';
 else $result[$j]['dispose']='True'; $j++;
 }
-//echo '<pre>'; print_r($result); echo '<pre>';  exit;
 
 
 //ROLE BASED  
@@ -444,6 +473,20 @@ foreach($roleList as $role){
 if($name==$role) { $result[$j]['role']  = 'True'; break; }
 } $j++;
 }
+
+//echo '<pre>'; print_r($result); echo '<pre>';  exit;
+
+//Type
+
+if(strpos($result[0]['email'], 'gmail.com') !== false ||
+   strpos($result[0]['email'], 'yahoo.com') !== false ||
+   strpos($result[0]['email'], 'outlook.com') !== false )
+   $result[0]['type']  = 'Free';
+   else $result[0]['type']  = 'Professional';
+
+   if($result[0]['role']  == 'True')
+    $result[0]['type']  = 'Professional';
+
  // echo '<pre>'; print_r($result); echo '<pre>';  exit;
 
 //CLEAN for DOWNLOAD
@@ -452,18 +495,35 @@ if($name==$role) { $result[$j]['role']  = 'True'; break; }
 //$cleanResult[$key]['email']=$this->clean($value['email']);
 //CLEAN for DOWNLOAD
 
-echo '<pre>'; print_r($result); echo '<pre>'; exit;
-
-//STOP HERE****
+//echo '<pre>'; print_r($result); echo '<pre>'; exit;
 
 //DB INSERT
- $user_id = Auth::id();
-DB::table('files')->
-insert(['user_id'=>$user_id, 'info'=>json_encode($cleanResult), 'file_name'=>$fileName]);
+    $user_id = Auth::id();
+    $data = array();
+    $data['user_id'] = $user_id;
+    $data['email'] = $result[0]['email'];
 
-//DB GET
-$i=0;
-$files=DB::table('files')->where('user_id',$user_id)->orderBy('id','DESC')->get();
+    if($result[0]['smtp'] == 'True')
+    $data['valid'] = 'Valid'; else $data['valid'] = 'Invalid';
+
+    if($result[0]['smtp'] == 'True')
+    $data['smtp'] = 'Valid';else $data['smtp'] = 'Invalid';
+
+    if($result[0]['mx'] == 'True')
+    $data['mx'] = 'Valid'; else $data['mx'] = 'Invalid';
+
+    $data['dispose'] = $result[0]['dispose'];
+    $data['role'] = $result[0]['role'];
+    $data['type'] = $result[0]['type'];
+
+
+    $data['date'] = date('M d, Y'); //return $data; exit;
+
+    DB::table('single_check')->insert($data);
+    Session::put('single_check','clicked');Session::save();
+    return redirect('single_validate');
+
+//STOP HERE****
 
 
 //ECHO TABLE 

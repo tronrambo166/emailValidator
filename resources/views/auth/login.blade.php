@@ -39,10 +39,17 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
+
+                <x-jet-button class="d-block ml-4">
                     {{ __('Log in') }}
-                </x-jet-button>
+                </x-jet-button> <br>
+
+                
+
             </div>
         </form>
+
+        <p style="font-size: 15px;" class="small d-block">Don't have an accunt? <a style="color: green;" class="text-success" href="./register">Register</a></p>
+
     </x-jet-authentication-card>
 </x-guest-layout>

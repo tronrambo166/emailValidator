@@ -56,7 +56,7 @@
         <script type="text/javascript" src="public/builder/js/oc-advanced.js"></script>
 
  <div class="mb-5 "  style="max-height: 700px;background-color:white; "> 
-    <p style="background: #ccf7ef3d;color: grey;" class="font-weight-bold h4 text-center  py-3"> Emails from Text</p>
+    <p style="background: white;color: grey;" class="font-weight-bold h5 text-center text-secondary py-3"> Emails from Text</p>
 </div> 
 
 <div class="row w-75 mx-auto">
@@ -85,8 +85,8 @@
                     </div>
 
 
-  <div id="results" class="col-sm-5  card mx-auto shadow"  style="max-height: 700px;background:#fff8f842; ">
-     <p style="background: #008353;color: white;" class="px-0 font-weight-bold h5 text-center  py-1"> Results</p>
+  <div id="results" class="px-0 col-sm-5  card mx-auto shadow"  style="max-height: 700px;background:white; ">
+     <p style="background: #edf1efba;color: black;" class="px-0 font-weight-bold h5 text-center  py-4"> Results</p>
    
   <table class="table tabil mb-4 mx-auto" style="color:black;">
   <thead>
@@ -102,8 +102,7 @@
     <tr id="loading">  
       <td scope="row" class="text-center"> {{$cnt++}} </td>
        <td scope="row" class="text-center"> {{$email}} </td>
-         
-        </td>
+      
     </tr>
 
    @endforeach @endif

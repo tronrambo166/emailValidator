@@ -56,7 +56,7 @@
         <script type="text/javascript" src="public/builder/js/oc-advanced.js"></script>
 
  <div class="mb-4"  style="max-height: 700px;background-color:#f3f6f9; "> 
-    <p style="background: black;" class="font-weight-bold h4 text-center text-white py-3"> Validate Bulk Emails</p>
+    <p style="background: white;" class="font-weight-bold h5 text-center text-secondary py-3"> Validate Bulk Emails</p>
     <p class="py-2 small bg-light text-center"> Validate (Syntax, Mx, Smtp, Disposal, Role etc.)</p>
 </div> 
 
@@ -153,7 +153,7 @@
 
                             </div> -->
                             <div class="clearfix row"></div>
-                             <button style="background: #041fa5;" id="launchs" type="submit" class="my-3 font-weight-bold text-light btn d-block w-25 ml-auto">Validate </button>
+                             <button style="background: #0ac982;" id="launchs" type="submit" class="my-3 font-weight-bold text-light btn d-block w-25 ml-auto">Validate </button>
                         </div>
                       
                         

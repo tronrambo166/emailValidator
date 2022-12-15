@@ -16,6 +16,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\SwotController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\builderController;
+use App\Http\Controllers\adminController;
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -42,85 +43,49 @@ Route::get('/history', [builderController::class, "history"])->name('/history');
 //Internal Validate with details
 Route::post('/single_validate', [builderController::class, "single_validate"])->name('/single_validate');
 Route::post('/mx_check', [builderController::class, "mx_check"])->name('/mx_check');
-Route::get('/mail_rep_dld/{info}/{fileName}', [builderController::class, "mail_rep_dld"])->name('mail_rep_dld');
+Route::get('/mail_rep_dld/{info}/{fileName}/{type}', [builderController::class, "mail_rep_dld"])->name('mail_rep_dld');
 //BUILDER ROUTES
+
+
 
 Route::get("/super-admin/dashboard", [
     SuperAdminController::class,
     "dashboard",
 ]);
 
-//SUPER ADMIN
-Route::prefix("super-admin")->group(function () {
-    Route::get("/", [AuthController::class, "superAdminLogin"])->name(
-        "super-admin-login"
-    );
-    Route::post("/auth", [AuthController::class, "superAdminAuthenticate"])->name('super-admin/auth');
-//});
+
+//*****************ADMIN ROUTES*******************/
+Route::Group(['prefix' => 'admin'], function () { 
+    
+    Route::get('/index_admin',[adminController::class, 'index_admin'])->name('index_admin');
+        Route::get('/logout','adminController@logout')->name('logout');
+        Route::get('/users', [adminController::class, 'users'])->name('users');
+        Route::get('/plans', [adminController::class, 'plans'])->name('plans');
+        Route::get('/approve/{id}', [adminController::class, 'approve'])->name('approve');
+        Route::get('/restrict/{id}', [adminController::class, 'restrict'])->name('restrict');
+         Route::get('/del_users/{id}', [adminController::class, 'del_users'])->name('del_users');   
+
+        
+         Route::post('/update_jobs', [adminController::class, 'update_jobs'])->name('update_jobs');     
+         Route::get('/job_edit-{id}-{id_asn}', [adminController::class, 'job_edit'])->name('job_edit');
+         Route::get('/job_add', [adminController::class, 'job_add'])->name('job_add');
+        
+        Route::post('/adminLogin', [adminController::class, 'adminLogin'])->name('adminLogin');
+        
+
+    Route::get('forgot/{remail}', [adminController::class, 'forgot'])->name('forgot');
+    Route::post('send_reset_email', [adminController::class, 'send_reset_email'])->name('send_reset_email');
+    Route::post('reset/{remail}', [adminController::class, 'reset'])->name('reset');
+  
+        Route::get('/login', function () {
+        return view('admin.login');
+        })->name('login');
+       
+    });
 
 
-Route::get("/update-schema", [
-    SuperAdminController::class,
-    "updateSchema",
-]);
 
-Route::get("/subscription-plans", [SuperAdminController::class, "saasPlans"])->name('subscription-plans');
-Route::get("/subscription-plan", [
-    SuperAdminController::class,
-    "createSaasPlan",
-]);
-Route::get("/payment-gateways", [
-    SuperAdminController::class,
-    "paymentGateways",
-]);
-Route::get("/configure-payment-gateway", [
-    SuperAdminController::class,
-    "configurePaymentGateway",
-]);
-Route::post("/save-subscription-plan", [
-    SuperAdminController::class,
-    "subscriptionPlanPost",
-])->name('/save-subscription-plan');
-Route::get("/edit-workspace", [
-    SuperAdminController::class,
-    "editWorkspace",
-]);
-Route::post("/save-workspace", [
-    SuperAdminController::class,
-    "saveWorkspace",
-])->name('/save-workspace');
-Route::post("/configure-gateway", [
-    SuperAdminController::class,
-    "configurePaymentGatewayPost",
-])->name('/configure-gateway');
-Route::get("/user-profile", [SuperAdminController::class, "userProfile"]);
-Route::get("/super-admin-profile", [
-    SuperAdminController::class,
-    "adminProfile",
-]);
-Route::get("/super-admin-setting", [
-    SuperAdminController::class,
-    "adminSetting",
-]);
-Route::get("/workspaces", [SuperAdminController::class, "workspaces"]);
-Route::get("/add-user", [SuperAdminController::class, "addUser"]);
-Route::get("/delete-workspace/{id}", [
-    SuperAdminController::class,
-    "deleteWorkspace",
-]);
-Route::get("/logout", [AuthController::class, "logout"])->name('logout');;
-
-Route::get("/delete-user/{id}", [SuperAdminController::class, "deleteUser"]);
-Route::get("/users", [SuperAdminController::class, "users"]);
-Route::get("/emails", [SuperAdminController::class, "newsletterEmail"]);
-Route::get("/user-edit-{id}", [ProfileController::class, "userEdit"]);
-
-Route::get("/delete/{action}/{id}", [DeleteController::class, "delete"]);
-Route::post("/settings", [SettingController::class, "settingsPost"])->name('/settings');
-
-});
-
-//SUPER ADMIN ENDS
+//Unused
 Route::get("/social-dashboard", 'socialController@dashboard')->name('/social-dashboard');
 
 Route::get("/subscribe", [SubscribeController::class, "subscribe"]);
