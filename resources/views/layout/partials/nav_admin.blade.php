@@ -18,6 +18,11 @@
 								<a href="./plans"><i class="fe fe-user"></i> <span class="text-dark">Plans</span></a>
 							</li>
 
+
+							<li  class="{{ Request::is('admin/setting') ? 'active' : '' }}"> 
+								<a href="./setting"><i class="fe fe-user"></i> <span class="text-dark">Setting</span></a>
+							</li>
+
 							
 
 							

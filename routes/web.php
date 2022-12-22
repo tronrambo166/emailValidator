@@ -61,6 +61,11 @@ Route::Group(['prefix' => 'admin'], function () {
         Route::get('/logout','adminController@logout')->name('logout');
         Route::get('/users', [adminController::class, 'users'])->name('users');
         Route::get('/plans', [adminController::class, 'plans'])->name('plans');
+
+        Route::get('/setting', [adminController::class, 'setting'])->name('setting');
+         Route::post('/smtp_setting', [adminController::class, 'smtp_setting'])->name('smtp_setting'); 
+
+
         Route::get('/approve/{id}', [adminController::class, 'approve'])->name('approve');
         Route::get('/restrict/{id}', [adminController::class, 'restrict'])->name('restrict');
          Route::get('/del_users/{id}', [adminController::class, 'del_users'])->name('del_users');   
@@ -71,6 +76,8 @@ Route::Group(['prefix' => 'admin'], function () {
          Route::get('/job_add', [adminController::class, 'job_add'])->name('job_add');
         
         Route::post('/adminLogin', [adminController::class, 'adminLogin'])->name('adminLogin');
+
+
         
 
     Route::get('forgot/{remail}', [adminController::class, 'forgot'])->name('forgot');

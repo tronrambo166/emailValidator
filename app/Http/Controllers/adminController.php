@@ -70,6 +70,41 @@ class AdminController extends Controller
        return view('admin.plans'); 
  }
 
+ public function setting()
+    {           
+      //User::where('id',$id)->update(['approved' => 0]);
+       return view('admin.setting');
+ }
+
+
+ public function smtp_setting(Request $hos)
+    {           
+          $provider =$hos->provider;
+          $driver=$hos->driver;
+          $host=$hos->host;
+          $port=$hos->port;
+          $username=$hos->username;
+          $password=$hos->password;
+          $security=$hos->security; 
+          $mail_f = $hos->mail_f;
+          $mail_f_name = $hos->mail_f_name;
+          $data = array();
+
+          $data['provider'] =  $provider;
+          $data['driver'] =  $driver;
+          $data['host'] =  $host;
+          $data['port'] = $port;
+          $data['username']=  $username;
+          $data['password'] =  $password;
+          $data['security'] =  $security;
+          $data['mail_f'] =  $mail_f;
+          $data['mail_f_name'] =  $mail_f_name;
+         
+         DB::table('smtp')->insert($data);
+         Session::put('success','Setting saved!');
+          return redirect('admin/setting'); 
+ }
+
  // Users
 
 
